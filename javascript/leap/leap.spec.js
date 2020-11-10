@@ -5,11 +5,11 @@ describe('A leap year', () => {
     expect(isLeap(2015)).toBe(false);
   });
 
-  xtest('year divisible by 2, not divisible by 4 in common year', () => {
+  test('year divisible by 2, not divisible by 4 in common year', () => {
     expect(isLeap(1970)).toBe(false);
   });
 
-  xtest('year divisible by 4, not divisible by 100 in leap year', () => {
+  test('year divisible by 4, not divisible by 100 in leap year', () => {
     expect(isLeap(1996)).toBe(true);
   });
 

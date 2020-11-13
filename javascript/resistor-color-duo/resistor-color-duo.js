@@ -1,9 +1,15 @@
 import { colorCode, COLORS } from '../resistor-color/resistor-color'
 
-export const decodedValue = (inputColors) => {
-  const [a, b] = inputColors
-  return (colorCode(a) * 10) + colorCode(b)
-};
+export const decodedValue = ([firstColor, secondColor]) => {
+  // const [a, b] = inputColors
+  return (colorCode(firstColor) * 10) + colorCode(secondColor)
+}
+
+// iteration 1
+// export const decodedValue = (inputColors) => {
+//   const [a, b] = inputColors
+//   return (colorCode(a) * 10) + colorCode(b)
+// };
 
 // iteration 1
 // export const decodedValue = (inputColors) => {

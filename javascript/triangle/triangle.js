@@ -4,12 +4,16 @@
 //
 
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
   }
 
   isEquilateral() {
-    throw new Error("Remove this statement and implement this function");
+    if (this.a === this.b && this.b === this.c && this.c === this.a) {
+      return true
+    }
   }
 
   isIsosceles() {

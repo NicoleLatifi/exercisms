@@ -1,13 +1,13 @@
 class Gigasecond {
-  inputDate: Date;
+  private inputDate: Date;
 
   constructor(inputDate: Date) {
-    this.inputDate = inputDate
+    this.inputDate = inputDate;
   }
 
-  date() {
-    const startingDate = Date.parse(this.inputDate.toString())
-    const outputDate = startingDate + 1000000000000
+  date(): Date {
+    const startingDate = this.inputDate.getTime()
+    const outputDate = startingDate + 10 ** 12
     return new Date(outputDate)
   }
 }

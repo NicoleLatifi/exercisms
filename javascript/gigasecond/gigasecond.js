@@ -1,4 +1,5 @@
 export const gigasecond = (startingDate) => {
-  const endingDate = Date.parse(startingDate) + 1000000000000
+  const gigasecondInMs = 10 ** 12
+  const endingDate = startingDate.getTime() + gigasecondInMs
   return new Date(endingDate)
 }

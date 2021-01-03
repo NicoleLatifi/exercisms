@@ -1,18 +1,11 @@
 class Words {
-  count(words: string) {
-    words = words.replace('\n', ' ')
-    words = words.replace('\t', ' ')
+  count(words: string): Map<string, number> {
     words = words.trim()
-    let wordList = words.split(' ')
-    const wordCounts: {[k: string]: number} = {}
-    wordList.forEach(word => {
-      if (word !== '') {
-        word = word.toLowerCase()
-        wordCounts[word] ? wordCounts[word]++ : wordCounts[word] = 1
-      }
-    })
-    console.log(Object.entries(wordCounts))
-    return new Map(Object.entries(wordCounts))
+    words = words.toLowerCase()
+    let wordList = words.split(/\s+/)
+    return wordList.reduce((wordCounts, word) => {
+      return wordCounts.set(word, wordCounts.get(word) + 1 || 1)
+    }, new Map())
   }
 }
 

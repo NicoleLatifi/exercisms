@@ -4,20 +4,14 @@
 //
 
 export const toRna = (dna) => {
-  let rna = []
-  dna.split('').forEach(dnaNucleotide => {
-    let rnaNucleotide
-    if (dnaNucleotide === 'G') {
-      rnaNucleotide = 'C'
-    } else if (dnaNucleotide === 'C') {
-      rnaNucleotide = 'G'
-    } else if (dnaNucleotide === 'T') {
-      rnaNucleotide = 'A'
-    } else if (dnaNucleotide === 'A') {
-      rnaNucleotide = 'U'
+  const rna = dna.split('').map(dnaNucleotide => {
+    const nucleotideComplements = {
+      'G': 'C',
+      'C': 'G',
+      'T': 'A',
+      'A': 'U'
     }
-
-    rna.push(rnaNucleotide)
+    return nucleotideComplements[dnaNucleotide]
   })
   return rna.join('')
 };

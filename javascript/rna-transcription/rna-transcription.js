@@ -1,12 +1,11 @@
+const nucleotideComplements = {
+  'G': 'C',
+  'C': 'G',
+  'T': 'A',
+  'A': 'U',
+}
+
 export const toRna = (dna) => {
-  const nucleotideComplements = {
-    'G': 'C',
-    'C': 'G',
-    'T': 'A',
-    'A': 'U',
-  }
-  const rna = dna.split('').map(dnaNucleotide => {
-    return nucleotideComplements[dnaNucleotide]
-  })
+  const rna = [...dna].map(dnaNucleotide => nucleotideComplements[dnaNucleotide] )
   return rna.join('')
 };

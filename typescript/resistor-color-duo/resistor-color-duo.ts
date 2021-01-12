@@ -22,10 +22,6 @@ export class ResistorColor {
   }
 
   value(): number {
-    let total: number = 0
-    total += colorCodes[this.colors[0]] * 10
-    total += colorCodes[this.colors[1]]
-
-    return total
+    return colorCodes[this.colors[0]] * 10 + colorCodes[this.colors[1]]
   }
 }

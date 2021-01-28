@@ -4,13 +4,37 @@
 //     if it doesn't, pangram = false
 // return pangram
 
+const unicodes = [
+"a",
+"b",
+"c",
+"d",
+"e",
+"f",
+"g",
+"h",
+"i",
+"j",
+"k",
+"l",
+"m",
+"n",
+"o",
+"p",
+"q",
+"r",
+"s",
+"t",
+"u",
+"v",
+"w",
+"x",
+"y",
+"z",
+]
+
 export const isPangram = (sentence) => {
   sentence = sentence.toLowerCase()
-  let pangram = true;
-  let i = 97;
-  while (i <= 122 && pangram === true) {
-    pangram = sentence.includes(String.fromCharCode(i))
-    i++
-  }
-  return pangram
+  const isCharIncluded = (currentChar) => sentence.includes(currentChar);
+  return unicodes.every(isCharIncluded)
 };

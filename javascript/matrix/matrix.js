@@ -1,15 +1,15 @@
-//
-// This is only a SKELETON file for the 'Matrix' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Matrix {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  constructor(matrix) {
+    this.matrix = matrix;
   }
 
   get rows() {
-    throw new Error('Remove this statement and implement this function');
+    const result = []
+    this.matrix.split(" ").forEach(num => {
+      result.push(+num)
+    })
+    console.log(result)
+    return result
   }
 
   get columns() {

@@ -4,15 +4,22 @@ export class Matrix {
   }
 
   get rows() {
-    const result = []
-    this.matrix.split(" ").forEach(num => {
-      result.push(+num)
+    const rows = []
+    this.matrix.split("\n").forEach(row => {
+      rows.push(row.split(" ").map(num => +num))
+
     })
-    console.log(result)
-    return result
+    return rows
   }
 
   get columns() {
-    throw new Error('Remove this statement and implement this function');
+    const columns = [];
+    for (let i = 0; i < this.rows[0].length; i++) {
+      columns.push([])
+      for (let j = 0; j < this.rows.length; j++) {
+        columns[i].push(this.rows[j][i])
+      }
+    }
+    return(columns)
   }
 }

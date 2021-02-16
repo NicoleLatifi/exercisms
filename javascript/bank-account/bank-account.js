@@ -1,26 +1,40 @@
+const BALANCE = Symbol();
+
 export class BankAccount {
   constructor() {
-    this.balance = 0
+    this[BALANCE] = 0
   }
 
   open() {
-    this.balance = 0
+    this[BALANCE] = 0
   }
 
   close() {
-    throw new Error('Remove this statement and implement this function');
+    this[BALANCE] = null
   }
 
-  deposit() {
-    throw new Error('Remove this statement and implement this function');
+  deposit(amount) {
+    if(this[BALANCE] !== null) {
+      this[BALANCE] += amount
+    } else {
+      throw new ValueError()
+    }
   }
 
-  withdraw() {
-    throw new Error('Remove this statement and implement this function');
+  withdraw(amount) {
+    if(this[BALANCE] !== null) {
+      this[BALANCE] -= amount
+    } else {
+      throw new ValueError()
+    }
   }
 
   get balance() {
-    return this.balance;
+    if(this[BALANCE] !== null) {
+      return this[BALANCE]
+    } else {
+      throw new ValueError()
+    }
   }
 }
 
